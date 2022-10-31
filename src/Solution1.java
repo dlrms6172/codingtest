@@ -1,4 +1,4 @@
-import java.util.Stack;
+
 
 public class Solution1 {
 
@@ -6,18 +6,23 @@ public class Solution1 {
        static int solution(String s) {
             int answer=0;
 
-           Stack<Integer> stack = new Stack<>();
+            //split() 사용
+            String arr[] = s.split(" ");
 
-           for(String t:s.split(" ")){
-               if(t.equals("Z")){
-                   if(!stack.isEmpty())
-                       answer -= stack.pop();
-               }
-               else
-                   answer += stack.push(Integer.parseInt(t));
-           }
+
+            for(int i=0; i<arr.length; i++){
+
+                answer+=arr[i].charAt(0);
+
+                if(arr[i].charAt(0)==90){
+                    System.out.println(i+"번째가 Z입니다");
+                }
+
+            }
+
 
            System.out.println(answer);
+
             return answer;
         }
 
@@ -25,7 +30,7 @@ public class Solution1 {
 
     public static void main(String[] args) {
 
-        solution("10 20 Z 30 40");
+        solution("10 20 30 40");
 
     }
 }
