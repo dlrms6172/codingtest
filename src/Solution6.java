@@ -14,6 +14,6 @@ public class Solution6 {
     }
 
     public static void main(String[] args) {
-        solution(10);
+        solution(6);
     }
 }
